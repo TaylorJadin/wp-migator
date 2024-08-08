@@ -21,7 +21,7 @@ SOURCE_PATH=$(ensure_trailing_slash "$RAW_PATH")
 DB_FILE=$SOURCE_USERNAME-$(date +'%Y-%m-%dT%H%M%S%z').sql
 
 cp $WEBROOT/.htaccess /tmp/.htaccess
-cp $WEBROOT/ROOT/wp-config.php /tmp/wp-config.php
+cp $WEBROOT/wp-config.php /tmp/wp-config.php
 ssh $SOURCE_USERNAME@$SOURCE_SERVER "cd $SOURCE_PATH && wp db export $DB_FILE"
 rsync -ahP --delete $SOURCE_USERNAME@$SOURCE_SERVER:$SOURCE_PATH $WEBROOT/
 chmod 600 $WEBROOT/wp-config.php
