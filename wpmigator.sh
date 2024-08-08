@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Contstants
-WEBROOT=/var/www/WEBROOT
+WEBROOT=/var/www/webroot/ROOT
 
 # Input
 read -p "Source server: " SOURCE_SERVER
